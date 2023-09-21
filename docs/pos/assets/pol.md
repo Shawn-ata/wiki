@@ -13,7 +13,7 @@ image: https://wiki.polygon.technology/img/polygon-wiki.png
 
 :::caution **Important Update**
 
-There is a proposal to transition the native token of the Polygon PoS network from MATIC to POL. This document will provide details on what this means for users of MATIC, the Polygon ecosystem, and the planned changes. Please read carefully and stay tuned for more information and the proposals mature.
+There is a proposal to transition the native token of the Polygon PoS network from MATIC to POL. This document will provide details on what this means for users of MATIC, the Polygon ecosystem, and the planned changes. Please read carefully and find more information [<ins>here</ins>](https://polygon.technology/blog/polygon-2-0-implementation-officially-begins-the-first-set-of-pips-polygon-improvement-proposals-released).
 
 :::
 
