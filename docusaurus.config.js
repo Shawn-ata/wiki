@@ -315,7 +315,7 @@ module.exports = {
             },
             {
               to: '/docs/category/proposals/',
-              label: 'Create Proposals',
+              label: 'Raise a Proposal',
               target: '_self',
               rel: null,
             },
