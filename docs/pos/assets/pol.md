@@ -27,7 +27,7 @@ POL is an upgrade of the native token for the Polygon PoS network, designed to r
 
 **No**, as an active participant in the Polygon PoS network, you're not required to take any immediate actions. However, we encourage active participants to engage in the governance and decision-making processes of the POL token proposal. Your involvement and input can play a significant role in shaping the future of the Polygon ecosystem.
 
-You can participate in governance proposals to vote on various aspects of the Polygon ecosystem through the PIP program. Check out how to do so [here](https://wiki.polygon.technology/docs/category/polygon-improvement-proposals-pips/).
+You can participate in governance proposals to vote on various aspects of the Polygon ecosystem through the PIP program. Check out how to do so [<ins>here</ins>](/docs/category/proposals/).
 
 ### **Do** I Need to Do Anything Today **as a Node Operator or Staker?**
 
@@ -35,7 +35,7 @@ You can participate in governance proposals to vote on various aspects of the Po
 
 ### **Do** I Need to Do Anything **Today as an Application or Tooling Developer?**
 
-Please review the [PIPs](https://forum.polygon.technology/t/pip-18-polygon-2-0-phase-0-frontier/12913) and provide feedback on the proposed changes and analyze if any changes break your smart contracts. Developers for applications on the Polygon PoS should not see any breaking changes.
+Please review the [<ins>PIPs</ins>](https://forum.polygon.technology/t/pip-18-polygon-2-0-phase-0-frontier/12913) and provide feedback on the proposed changes and analyze if any changes break your smart contracts. Developers for applications on the Polygon PoS should not see any breaking changes.
 
 ### When Will POL Be Officially Upgraded?
 
@@ -53,15 +53,15 @@ Yes, POL has an inflationary model. **It will emit 2% of the supply per year**.
 
 ### Who Manages POL Minting?
 
-The `**EmissionsManager**` smart contract is responsible for initiating the upgrade to POL through a minting process. This contract is upgradeable, allowing for future changes through governance. It also ensures that the `**StakeManager**` and `**Treasury**` contracts receive their respective amounts of the newly minted tokens.
+The `EmissionsManager` smart contract is responsible for initiating the upgrade to POL through a minting process. This contract is upgradeable, allowing for future changes through governance. It also ensures that the `StakeManager` and `Treasury` contracts receive their respective amounts of the newly minted tokens.
 
 ### What Determines the Inflation Rate?
 
-The inflation rate is governed by a variable named `**mintPerSecondCap**` in the primary POL smart contract. Additionally, the `**EmissionManager**` contract uses a constant called `**INTEREST_PER_YEAR_LOG2**` to calculate a **2% annual inflation rate, compounded per year**.
+The inflation rate is governed by a variable named `mintPerSecondCap` in the primary POL smart contract. Additionally, the `EmissionManager` contract uses a constant called `INTEREST_PER_YEAR_LOG2` to calculate a **2% annual inflation rate, compounded per year**.
 
 ### Can the Emission Rate Be Modified?
 
-Yes, the emission rate can be modified through a governance proposal, but cannot surpass `**mintPerSecondCap**` in the primary POL smart contract.
+Yes, the emission rate can be modified through a governance proposal, but cannot surpass `mintPerSecondCap` in the primary POL smart contract.
 
 ### ****What Considerations Go Into POL’s Economic Design?****
 
