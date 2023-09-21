@@ -63,7 +63,7 @@ The inflation rate is governed by a variable named `mintPerSecondCap` in the pri
 
 Yes, the emission rate can be modified through a governance proposal, but cannot surpass `mintPerSecondCap` in the primary POL smart contract.
 
-### ****What Considerations Go Into POL’s Economic Design?****
+### What Considerations Go Into POL’s Economic Design?
 
 The economic design of POL incorporates several key considerations to aim for stability, such as:
 
