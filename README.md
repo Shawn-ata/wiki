@@ -121,8 +121,7 @@ Polygon Edge provides infrastructure for application-specific chains that operat
 
 ### Miden
 
-Polyvon Miden is a ZK-optimized rollup with client-side proving, aiming to complement Polygon’s set of zero-knowledge as part of the internet's value layer.
-Unlike many other rollups, Polygon Miden prioritizes ZK-friendliness over EVM compatibility.
+Polyvon Miden is a ZK-optimized rollup with client-side proving, aiming to complement Polygon’s set of zero-knowledge as part of the internet's value layer. Unlike many other rollups, Polygon Miden prioritizes ZK-friendliness over EVM compatibility.
 
 ### ID
 
