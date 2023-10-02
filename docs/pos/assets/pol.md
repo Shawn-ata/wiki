@@ -89,14 +89,6 @@ Yes, the migration contract includes a feature known as "**unmigration**." This 
 
 ## Bridging Mechanisms
 
-### How Does the Modified Plasma Bridge Function?
-
-The Plasma Bridge will undergo modifications, with community endorsement, to change the Native Token of Polygon PoS to the new POL token. Specifically, the following changes are being proposed:
-
-- **Depositing MATIC**: If the proposal is accepted and POL is adapted as the native token of Polygon PoS, when a user deposits MATIC, it will automatically convert to POL tokens on Ethereum. You will receive an equal amount of native tokens (POL) on Polygon PoS.
-- **Depositing POL**: If you deposit POL tokens, you will receive an equal amount of native tokens (POL) on Polygon PoS.
-- **Withdrawing**: When withdrawing native tokens (POL), the bridge will always disburse withdrawals in POL tokens.
-
 ### Is There a Possibility of Funds Getting Locked or Stuck?
 
 Yes, if an existing contract relies on withdrawing MATIC from a bridge and receives POL instead, this might result in locked funds. **Developers must check their contracts, verify the transaction lifecycle, and engage on the forum for any doubts.**
