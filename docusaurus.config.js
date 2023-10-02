@@ -358,25 +358,19 @@ module.exports = {
             {
               href: 'https://0xpolygonmiden.github.io/examples/',
               label: 'Get Started with Miden',
-              target: '_self',
+              target: '_blank',
               rel: null,
             },
             {
               href: 'https://github.com/0xPolygonMiden/miden-base/tree/main/docs/src',
               label: 'Learn about the Miden Rollup',
-              target: '_self',
+              target: '_blank',
               rel: null,
             },
             {
               href: 'https://0xpolygonmiden.github.io/miden-vm/',
               label: 'Learn about MidenVM',
-              target: '_self',
-              rel: null,
-            },
-            {
-              href: 'https://0xpolygonmiden.github.io/examples/',
-              label: 'Try it out using Miden Playground',
-              target: '_self',
+              target: '_blank',
               rel: null,
             },
           ],
