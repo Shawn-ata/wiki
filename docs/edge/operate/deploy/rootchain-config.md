@@ -38,7 +38,7 @@ values={[
 
 <TabItem value="geth">
 
-### i. Start the geth node
+### i. Start the Geth node
 
 The `polygon-edge` rootchain server command starts an ethereum/client-go container, which runs a new Geth node.
 To do this, open a new terminal session and run:
