@@ -164,21 +164,23 @@ If the `StakeManager` hasn't been deployed to the rootchain, you need to carry o
 <details>
 <summary>Flags ↓</summary>
 
-| Flag            | Description                                                                                            | Example |
-|-----------------|--------------------------------------------------------------------------------------------------------|---------|
-| `--config`      | Path to the SecretsManager config file, if omitted, the local FS secrets manager is used               |         |
-| `--data-dir`    | Directory for the Polygon Edge data if the local FS is used                                            |         |
-| `--genesis`     | Genesis file path, which contains chain configuration (default "./genesis.json")                       |         |
-| `--jsonrpc`     | The JSON-RPC interface (default "0.0.0.0:8545")                                                        |         |
-| `--private-key` | Hex-encoded private key of the account which executes rootchain commands                               |         |
-| `--stake-token` | Address of ERC20 token used for staking on rootchain                                                   |         |
-| `--test`        | Contract will be deployed using test account and a test stake ERC20 token will be deployed for staking |         |
+| Flag                         | Description                                                                   | Example                                         |
+|------------------------------|-------------------------------------------------------------------------------|-------------------------------------------------|
+| `--config`                   | The path to the SecretsManager config file, if omitted, the local FS secrets manager is used | `--config /path/to/config`                  |
+| `--data-dir`                 | The directory for the Polygon Edge data if the local FS is used              | `--data-dir test-chain-`                     |
+| `--genesis`                  | Genesis file path, which contains chain configuration (default "./genesis.json") | `--genesis ./genesis.json`                    |
+| `-h, --help`                 | Help for stake-manager-deploy                                                |                                                 |
+| `--jsonrpc`                  | The JSON-RPC interface (default "http://0.0.0.0:8545")                        | `--jsonrpc http://0.0.0.0:8545`              |
+| `--private-key`              | Hex-encoded private key of the account which executes rootchain commands      | `--private-key <PRIVATE_KEY>`                |
+| `--proxy-contracts-admin`    | Admin for proxy contracts                                                     | `--proxy-contracts-admin <PROXY_CONTRACTS_ADMIN>` |
+| `--stake-token`              | Address of ERC20 token used for staking on rootchain                          | `--stake-token <STAKE_TOKEN_ADDRESS>`         |
+| `--test`                     | Indicates if the command is run in test mode. If test mode is used, the contract will be deployed using a test account, and a test stake ERC20 token will be deployed for staking | `--test` |
 
 **Global Flags:**
 
 | Flag      | Description                                     | Example           |
 |-----------|-------------------------------------------------|-------------------|
-| `--json`  | Get all outputs in JSON format (default false). | `--json`          |
+| `--json`  | Get all outputs in JSON format (default false) | `--json`          |
 
 </details>
 
@@ -230,21 +232,23 @@ To run the deployment in test mode and use the test account provided by the Geth
 <details>
 <summary>Flags ↓</summary>
 
-| Flag                  | Description                                                                      | Example                                       |
-|-----------------------|----------------------------------------------------------------------------------|-----------------------------------------------|
-| `--deployer-key`      | Hex encoded private key of the account which deploys rootchain contracts         | `--deployer-key <PRIVATE_KEY>`                |
-| `--json-rpc`          | The JSON RPC rootchain IP address (defaults to http://127.0.0.1:8545)            | `--json-rpc http://127.0.0.1:8545`            |
-| `--genesis`           | Genesis file path that contains chain configuration (defaults to ./genesis.json) | `--genesis ./genesis.json`                    |
-| `--erc20-token`       | Existing rootchain ERC-20 token address                                          | `--erc20-token <ERC_20_ADDRESS>`              |
-| `--stake-manager`     | Address of stake manager contract                                                | `--stake-manager <STAKE_MANAGER_ADDRESS>`     |
-| `--stake-token`       | Address of ERC20 token used for staking on rootchain                             | `--stake-token <STAKE_TOKEN_ADDRESS>`         |
-| `--test`              | Indicates whether rootchain contracts deployer is hardcoded test account         | `--test`                                      |
+| Flag                         | Description                                                                   | Example                                         |
+|------------------------------|-------------------------------------------------------------------------------|-------------------------------------------------|
+| `--deployer-key`             | Hex-encoded private key of the account which deploys rootchain contracts     | `--deployer-key <PRIVATE_KEY>`                  |
+| `--erc20-token`              | Existing root chain root native token address                                | `--erc20-token <ERC_20_ADDRESS>`                |
+| `--genesis`                  | Genesis file path, which contains chain configuration (default "./genesis.json") | `--genesis ./genesis.json`                    |
+| `-h, --help`                 | Help for deploy                                                               |                                                 |
+| `--json-rpc`                 | The JSON RPC rootchain IP address (default "http://127.0.0.1:8545")           | `--json-rpc http://127.0.0.1:8545`            |
+| `--proxy-contracts-admin`    | Admin for proxy contracts                                                     | `--proxy-contracts-admin <PROXY_CONTRACTS_ADMIN>` |
+| `--stake-manager`            | Address of stake manager contract                                             | `--stake-manager <STAKE_MANAGER_ADDRESS>`     |
+| `--stake-token`              | Address of ERC20 token used for staking on rootchain                         | `--stake-token <STAKE_TOKEN_ADDRESS>`         |
+| `--test`                     | Indicates whether rootchain contracts deployer is hardcoded test account     | `--test`                                        |
 
 **Global Flags:**
 
 | Flag      | Description                                     | Example           |
-|-----------|--------------------------------------------- ---|-------------------|
-| `--json`  | Get all outputs in JSON format (default false). | `--json`          |
+|-----------|-------------------------------------------------|-------------------|
+| `--json`  | Get all outputs in JSON format (default false) | `--json`          |
 
 </details>
 
