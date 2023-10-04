@@ -177,12 +177,6 @@ If the `StakeManager` hasn't been deployed to the rootchain, you need to carry o
 | `--stake-token`              | Address of ERC20 token used for staking on rootchain.                         | `--stake-token <STAKE_TOKEN_ADDRESS>`         |
 | `--test`                     | Indicates if the command is run in test mode. If test mode is used, the contract will be deployed using a test account, and a test stake ERC20 token will be deployed for staking. | `--test` |
 
-**Global Flags:**
-
-| Flag      | Description                                     | Example           |
-|-----------|-------------------------------------------------|-------------------|
-| `--json`  | Get all outputs in JSON format (default false). | `--json`          |
-
 </details>
 
 ## 2. Deployment Considerations
@@ -244,12 +238,6 @@ To run the deployment in test mode and use the test account provided by the Geth
 | `--stake-manager`            | Address of stake manager contract                                             | `--stake-manager <STAKE_MANAGER_ADDRESS>`     |
 | `--stake-token`              | Address of ERC20 token used for staking on rootchain                         | `--stake-token <STAKE_TOKEN_ADDRESS>`         |
 | `--test`                     | Indicates whether rootchain contracts deployer is hardcoded test account     | `--test`                                        |
-
-**Global Flags:**
-
-| Flag      | Description                                     | Example           |
-|-----------|-------------------------------------------------|-------------------|
-| `--json`  | Get all outputs in JSON format (default false) | `--json`          |
 
 </details>
 
@@ -429,12 +417,6 @@ This command includes a test flag, which is intended solely for testing scenario
 | `--stake-token` | Address of ERC20 token used for staking on rootchain                                                   |         |
 | `--test`        | Contract will be deployed using test account and a test stake ERC20 token will be deployed for staking |         |
 
-**Global Flags:**
-
-| Flag      | Description                                     | Example           |
-|-----------|-------------------------------------------------|-------------------|
-| `--json`  | Get all outputs in JSON format (default false). | `--json`          |
-
 </details>
 
 ## 2. Deployment Considerations
@@ -492,12 +474,6 @@ You also need to specify the path to the genesis file using the `--genesis` opti
 | `--stake-manager`     | Address of stake manager contract                                        | `--stake-manager <STAKE_MANAGER_ADDRESS>`     |
 | `--stake-token`       | Address of ERC20 token used for staking on rootchain                     | `--stake-token <STAKE_TOKEN_ADDRESS>`         |
 | `--test`              | Indicates whether rootchain contracts deployer is hardcoded test account | `--test`                                      |
-
-**Global Flags:**
-
-| Flag      | Description                                     | Example           |
-|-----------|--------------------------------------------- ---|-------------------|
-| `--json`  | Get all outputs in JSON format (default false). | `--json`          |
 
 </details>
 

@@ -34,12 +34,6 @@ The `polygon-edge polybft-secrets` command is used to generate account secrets f
 | `--output`      | The flag indicating to output existing secrets.                                                           | `--output`                 |
 | `--private`     | The flag indicating whether the private key is printed.                                                   | `--private`                |
 
-**Global Flags:**
-
-| Flag      | Description                                    | Example           |
-|-----------|------------------------------------------------|-------------------|
-| `--json`  | Get all outputs in JSON format (default false). | `--json`          |
-
 </details>
 
   ```bash
