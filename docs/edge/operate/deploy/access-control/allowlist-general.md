@@ -80,7 +80,7 @@ function getListEnabled() returns (bool)
 
 :::
 
-### Sample workflow
+### Sample Workflow
 
 Create a contract instance for the ACL precompile using the ABI and the provider connected to the network.
 Please note that these examples are provided as guidance and assume the usage of ether.js, with Alice and Bob used as placeholders for specific agents.
