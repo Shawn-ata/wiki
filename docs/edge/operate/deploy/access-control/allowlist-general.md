@@ -48,6 +48,21 @@ To interact with the ACL precompiles using an external library or client, follow
 
 3. Use the contract instance to call the functions defined in the precompile's ABI. These functions allow you to manage the ACL by adding or removing accounts, modifying roles, or performing other ACL-related operations.
 
+### ABI Specification
+
+Below is the ABI specification for the ACL:
+
+```shell
+function setAdmin(address)
+function setEnabled(address)
+function setNone(address)
+function readAddressList(address) returns (uint256)
+function setListEnabled(bool)
+function getListEnabled() returns (bool)
+```
+
+<!-- to document interaction -->
+
 ## Example Interaction with ethers.js
 
 ### Prerequisites
