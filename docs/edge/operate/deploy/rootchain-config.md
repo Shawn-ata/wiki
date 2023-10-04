@@ -20,7 +20,7 @@ In this section, we'll configure the associated rootchain of the Edge-powered ch
 
 After generating the initial chain state for your Edge-powered chain, the next step is to connect and initialize the rootchain contracts. This can be done using either a demo Geth instance or any EVM-compatible rootchain. The demo Geth instance is a local instance of a Geth node running in development mode, which simulates the Ethereum network and is **only intended for testing purposes**.
 
-## 1. Deploy and initialize rootchain contracts
+## 1. Deploy and Initialize Rootchain Contracts
 
 <!-- ===================================================================================================================== -->
 <!-- ==================================================== ROOTCHAIN TABS ================================================= -->
@@ -29,8 +29,8 @@ After generating the initial chain state for your Edge-powered chain, the next s
 <Tabs
 defaultValue="geth"
 values={[
-{ label: 'Demo Geth instance', value: 'geth', },
-{ label: 'EVM-compatible rootchain', value: 'rootchain', },
+{ label: 'Demo Geth Instance', value: 'geth', },
+{ label: 'EVM-Compatible Rootchain', value: 'rootchain', },
 ]
 }>
 
@@ -38,7 +38,7 @@ values={[
 
 <TabItem value="geth">
 
-### i. Start the Geth node
+### i. Start the Geth Node
 
 The `polygon-edge` rootchain server command starts an ethereum/client-go container, which runs a new Geth node.
 To do this, open a new terminal session and run:
@@ -142,7 +142,7 @@ You should see output similar to the following, indicating that the rootchain se
 
 This will start the rootchain server on the default JSON-RPC port of `8545`.
 
-### ii. Deploy StakeManager contract
+### ii. Deploy StakeManager Contract
 
 :::caution
 
@@ -183,7 +183,7 @@ If the `StakeManager` hasn't been deployed to the rootchain, you need to carry o
 
 To deploy the rootchain contracts, we use the `polygon-edge rootchain deploy` command. Before deployment, consider the following actions:
 
-### i. Funding required for nodes
+### i. Funding Required for Nodes
 
 Before initializing the contracts on the rootchain, we need to make sure that the nodes are funded with sufficient funds to cover the gas cost of deploying the contracts. Otherwise, the initialization process may fail due to a lack of funds. 
 
@@ -196,7 +196,7 @@ failed to deploy rootchain contracts: {"code":-32000,"message":"INTERNAL_ERROR: 
 You can also create a rootchain wallet and fund the nodes by using `polygon-cli`.
 Follow the steps outlined [<ins>here</ins>](https://github.com/maticnetwork/polygon-cli).
 
-### ii. Using an existing ERC-20 as the native gas token
+### ii. Using an Existing ERC-20 as the Native Gas Token
 
 If you already have an ERC-20 token deployed on the rootchain that you want to use as the gas token, you can specify its address using the `--erc20-token` flag when deploying the rootchain contracts. For example:
 
@@ -216,7 +216,7 @@ Replace `<ERC20_TOKEN_ADDRESS>` with the address of your existing ERC-20 token o
 
 To deposit a desired amount and mint it on the childchain, please refer to the guidelines outlined in the deposit guide [<ins>here</ins>](/docs/edge/operate/deploy/transfers/deposit.md).
 
-## 3. Deploy rootchain contracts
+## 3. Deploy Rootchain Contracts
 
 Using the `--deployer-key` flag, you will need to replace `<hex_encoded_deployer_private_key>` with the hex-encoded private key of the deployer account that will be used to deploy the smart contracts. If you omit the `--deployer-key` option, the default account in your local client will be used.
 
@@ -385,7 +385,7 @@ Address=0xFE5E166BA5EA50c04fCa00b07b59966E6C2E9570; Balance=10000000000000000000
 
 <TabItem value="rootchain">
 
-### i. Deploy StakeManager contract
+### i. Deploy StakeManager Contract
 
 :::caution
 
@@ -423,7 +423,7 @@ This command includes a test flag, which is intended solely for testing scenario
 
 To deploy the rootchain contracts, we use the `polygon-edge rootchain deploy` command. Before deployment, consider the following actions:
 
-### i. Funding required for nodes
+### i. Funding Required for Nodes
 
 Before initializing the contracts on the rootchain, we need to make sure that the nodes are funded with sufficient funds to cover the gas cost of deploying the contracts. Otherwise, the initialization process may fail due to a lack of funds. 
 
@@ -436,7 +436,7 @@ failed to deploy rootchain contracts: {"code":-32000,"message":"INTERNAL_ERROR: 
 You can also create a rootchain wallet and fund the nodes by using `polygon-cli`.
 Follow the steps outlined [<ins>here</ins>](https://github.com/maticnetwork/polygon-cli).
 
-### ii. Using an existing ERC-20 as the native gas token
+### ii. Using an Existing ERC-20 as the Native Gas Token
 
 If you already have an ERC-20 token deployed on the rootchain that you want to use as the gas token, you can specify its address using the `--erc20-token` flag when deploying the rootchain contracts. For example:
 
@@ -456,7 +456,7 @@ Replace `<ERC20_TOKEN_ADDRESS>` with the address of your existing ERC-20 token o
 
 To deposit a desired amount and mint it on the childchain, please refer to the guidelines outlined in the deposit guide [<ins>here</ins>](/docs/edge/operate/deploy/transfers/deposit.md).
 
-## 3. Deploy rootchain contracts
+## 3. Deploy Rootchain Contracts
 
 Using the `--deployer-key` flag, you will need to replace `<hex_encoded_deployer_private_key>` with the hex-encoded private key of the deployer account that will be used to deploy the smart contracts. If you omit the `--deployer-key` option, the default account in your local client will be used.
 
@@ -612,7 +612,7 @@ Address=0xFE5E166BA5EA50c04fCa00b07b59966E6C2E9570; Balance=10000000000000000000
 </TabItem>
 </Tabs>
 
-## 4. Funding validators on the rootchain
+## 4. Funding Validators on the Rootchain
 
 Before deploying validator nodes on the Edge-powered chain, we need to ensure that the validators have sufficient funds on the rootchain network. It's crucial to have enough funds in the validator account, as they need to cover the gas fees associated with their transactions on the rootchain.
 

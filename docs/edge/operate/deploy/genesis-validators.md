@@ -111,9 +111,9 @@ For example, if you are using the Mumbai test network, you can obtain the addres
 
 ```bash
 curl <mumbai-rpc-endpoint> \
--X POST \
--H "Content-Type: application/json" \
---data '{"jsonrpc":"2.0","method":"eth_contractAddress","params":["MaticToken"],"id":1}'
+  -X POST \
+  -H "Content-Type: application/json" \
+  --data '{"jsonrpc":"2.0","method":"eth_contractAddress","params":["MaticToken"],"id":1}'
 ```
 
 </details>
