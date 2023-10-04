@@ -114,64 +114,12 @@ While the use of alternative ACL-enabled contracts, such as bridge ACLs, offers 
 
 ## 2. Deployment Considerations
 
-### i. Difference between `chain-id` and `supernet-id`
-
-Edge-powered chains differentiates `chain-id` and `supernet-id` within the genesis file. 
-
-- The `chain-id` is a unique identifier for a childchain.
-- The `supernet-id` is a unique identifier that is automatically populated during the registration process with the `StakeManager` contract. There can be multiple Edge-powered chains registered within the same `StakeManager` - the `supernet-id` is used to distinguish them.
-
-Users can assign a custom `chain-id` to their Edge-powered chain via the genesis command. However, `supernet-id` doesn't function as a flag within this command. Instead, its value is derived from the `rootchain deploy` command during the registration process with the `StakeManager` contract.
-
-### ii. Create a Native Token and Premine
-
-| Flag                    | Description                                                                                                    |
-| ----------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `--premine`             | Specify premined accounts and their balances. Use the flag multiple times for multiple accounts.               |
-| `--native-token-config` | Configure the native token, including its name, symbol, decimal count, and whether it is mintable.             |
-
-> There is also an `--owner` flag only applicable for mintable native tokens and designates the account that has the permission to mint and burn tokens, in addition to the predicate.
-
-For example, the following command creates a native token named `MyToken` with the symbol `MTK`, `18` decimal places, and a total supply of `1,000,000` tokens. It also premines `1,000` tokens to the account at address `0x61324166B0202DB1E7502924326262274Fa4358F`.
-
-<details>
-<summary>Example ↓</summary>
-
-```bash
-./polygon-edge genesis --block-gas-limit 10000000 --epoch-size 10 \
-    --validators-path ./ --validators-prefix test-chain- \
-    --consensus polybft \
-    --premine 0x61324166B0202DB1E7502924326262274Fa4358F:1000000000000000000000 \
-    --native-token-config "MyToken:MTK:18:true" \
-    --reward-wallet 0x61324166B0202DB1E7502924326262274Fa4358F:1000000
-```
-
-</details>
-
-> Note that you can omit the `--native-token-config` flag if you don't want to create a native token.
-> For non-mintable native tokens, premining is limited to the `0x0` address - other accounts must bridge over assets from the rootchain.
-
-### iii. Enable EIP1559
-
-| Flag                      | Description                                                                                             |
-| ------------------------- | ------------------------------------------------------------------------------------------------------- |
-| `--burn-contract`         | Specify the burn contract address to enable the London hard fork and set where fees will be sent.       |
-| `--genesis-base-fee`      | Set the initial base fee (in GWEI) for the genesis block.                                               |
-
-For example, the following command enables EIP1559 by specifying the burn contract address and setting the genesis base fee to 2 GWEI:
-> The burn contract address must be specified in the format `<block>:<address>`. The genesis base fee value is in GWEI.
-
-<details>
-<summary>Example ↓</summary>
-
-```bash
-./polygon-edge genesis --block-gas-limit 10000000 --epoch-size 10 \
-    --validators-path ./ --validators-prefix test-chain- \
-    --consensus polybft \
-    --burn-contract 100:0x1234567890ABCDEF1234567890ABCDEF12345678
-```
-
-</details>
+| Consideration | Description | Details |
+| --- | --- | --- |
+| **Difference between `chain-id` and `supernet-id`** | - `chain-id`: Unique identifier for a childchain.<br/>- `supernet-id`: Identifier populated during registration with `StakeManager`. | Users can assign a custom `chain-id` via the genesis command. The `supernet-id` value is derived from the `rootchain deploy` command. |
+| **Create a Native Token and Premine** | Configure the native token and premine specific accounts. | - `--premine`: Specify premined accounts and balances.<br/>- `--native-token-config`: Configure the native token's details.<br/>- `--owner` (Note): For mintable native tokens, designates permissions. |
+| **Enable EIP1559** | Enable the London hard fork with specific configurations. | - `--burn-contract`: Specify the burn contract address.<br/>- `--genesis-base-fee`: Set the initial base fee for the genesis block. |
+| **Contract Upgradability via Proxy Contracts** | Use proxy contracts for flexible and controlled upgrades. | - **Genesis Initialization**: Use `--proxy-contracts-admin` to specify upgrade permissions.<br/>- **Rootchain Deployment**: Uses `--proxy-contracts-admin` to define contract address while being able to upgrade logic.<br/>- **Stake Manager Deployment**: Uses `--proxy-contracts-admin` to define proxy admin for Staking Manager contract. |
 
 ## 3. Specify Validator Set & Generate Genesis
 
@@ -210,6 +158,7 @@ We also add the `--transactions-allow-list-admin` flag to specify the admin addr
 
 ```bash
 ./polygon-edge genesis --block-gas-limit 10000000 --epoch-size 10 \
+    --proxy-contracts-admin 0x61324166B0202DB1E7502924326262274Fa4358F \
     --validators-path ./ --validators-prefix test-chain- \
     --consensus polybft \
     --reward-wallet 0x61324166B0202DB1E7502924326262274Fa4358F:1000000 \
@@ -438,6 +387,7 @@ We also add the `--transactions-allow-list-admin` flag to specify the admin addr
 
 ```bash
 ./polygon-edge genesis --block-gas-limit 10000000 --epoch-size 10 \
+    --proxy-contracts-admin 0x61324166B0202DB1E7502924326262274Fa4358F \
     --validators "/ip4/127.0.0.1/tcp/30301/p2p/16Uiu2HAmMYyzK7c649Tnn6XdqFLP7fpPB2QWdck1Ee9vj5a7Nhg8:0x61324166B0202DB1E7502924326262274Fa4358F:06d8d9e6af67c28e85ac400b72c2e635e83234f8a380865e050a206554049a222c4792120d84977a6ca669df56ff3a1cf1cfeccddb650e7aacff4ed6c1d4e37b055858209f80117b3c0a6e7a28e456d4caf2270f430f9df2ba37221f23e9bbd313c9ef488e1849cc5c40d18284d019dde5ed86770309b9c24b70ceff6167a6ca" \
     --validators "/ip4/127.0.0.1/tcp/30302/p2p/16Uiu2HAmLXVapjR2Yx3B1taCmHnckQ1ph2xrawBjW2kvSErps9CX:0xFE5E166BA5EA50c04fCa00b07b59966E6C2E9570:0601da8856a6d3d3bb0f3bcbb90ea7b8c0db8271b9203e6123c6804aa3fc5f810be33287968ca1af2be11839516850a6ffef2337d99e679b7531efbbea2e3bf727a053c0cbede71da3d5f489b6ad862ccd8bb0bfb7fa379e3395d3b1142594a73020e87d63c298a3a4eba0ace65727f8659bab6389b9448b72512db72bbe937f" \
     --consensus polybft \
