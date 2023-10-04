@@ -154,6 +154,7 @@ If the `StakeManager` hasn't been deployed to the rootchain, you need to carry o
 
   ```bash
   ./polygon-edge polybft stake-manager-deploy \
+  --proxy-contracts-admin 0xaddressOfProxyContractsAdmin \
   --private-key <hex_encoded_rootchain_account_private_key> \
   --genesis ./genesis.json \
   --jsonrpc http://127.0.0.1:8545 \
@@ -166,21 +167,21 @@ If the `StakeManager` hasn't been deployed to the rootchain, you need to carry o
 
 | Flag                         | Description                                                                   | Example                                         |
 |------------------------------|-------------------------------------------------------------------------------|-------------------------------------------------|
-| `--config`                   | The path to the SecretsManager config file, if omitted, the local FS secrets manager is used | `--config /path/to/config`                  |
-| `--data-dir`                 | The directory for the Polygon Edge data if the local FS is used              | `--data-dir test-chain-`                     |
-| `--genesis`                  | Genesis file path, which contains chain configuration (default "./genesis.json") | `--genesis ./genesis.json`                    |
-| `-h, --help`                 | Help for stake-manager-deploy                                                |                                                 |
-| `--jsonrpc`                  | The JSON-RPC interface (default "http://0.0.0.0:8545")                        | `--jsonrpc http://0.0.0.0:8545`              |
-| `--private-key`              | Hex-encoded private key of the account which executes rootchain commands      | `--private-key <PRIVATE_KEY>`                |
-| `--proxy-contracts-admin`    | Admin for proxy contracts                                                     | `--proxy-contracts-admin <PROXY_CONTRACTS_ADMIN>` |
-| `--stake-token`              | Address of ERC20 token used for staking on rootchain                          | `--stake-token <STAKE_TOKEN_ADDRESS>`         |
-| `--test`                     | Indicates if the command is run in test mode. If test mode is used, the contract will be deployed using a test account, and a test stake ERC20 token will be deployed for staking | `--test` |
+| `--config`                   | The path to the SecretsManager config file. If omitted, the local FS secrets manager is used. | `--config /path/to/config`                  |
+| `--data-dir`                 | The directory for the Polygon Edge data if the local FS is used.              | `--data-dir test-chain-`                     |
+| `--genesis`                  | Genesis file path, which contains chain configuration.                        | `--genesis ./genesis.json`                    |
+| `-h, --help`                 | Help for stake-manager-deploy.                                                |                                                 |
+| `--jsonrpc`                  | The JSON-RPC interface.                                                       | `--jsonrpc http://0.0.0.0:8545`              |
+| `--private-key`              | Hex-encoded private key of the account which executes rootchain commands.     | `--private-key <PRIVATE_KEY>`                |
+| `--proxy-contracts-admin`    | Admin for proxy contracts.                                                    | `--proxy-contracts-admin <PROXY_CONTRACTS_ADMIN>` |
+| `--stake-token`              | Address of ERC20 token used for staking on rootchain.                         | `--stake-token <STAKE_TOKEN_ADDRESS>`         |
+| `--test`                     | Indicates if the command is run in test mode. If test mode is used, the contract will be deployed using a test account, and a test stake ERC20 token will be deployed for staking. | `--test` |
 
 **Global Flags:**
 
 | Flag      | Description                                     | Example           |
 |-----------|-------------------------------------------------|-------------------|
-| `--json`  | Get all outputs in JSON format (default false) | `--json`          |
+| `--json`  | Get all outputs in JSON format (default false). | `--json`          |
 
 </details>
 
@@ -254,12 +255,16 @@ To run the deployment in test mode and use the test account provided by the Geth
 
   ```bash
   ./polygon-edge rootchain deploy \
-  --stake-manager $(cat genesis.json | jq -r '.params.engine.polybft.bridge.stakeManagerAddr') \
-  --stake-token $(cat genesis.json | jq -r '.params.engine.polybft.bridge.stakeTokenAddr')
+    --deployer-key <hex_encoded_rootchain_account_private_key> \
+    --stake-manager <address_of_stake_manager_contract> \
+    --stake-token 0xaddressOfStakeToken \
+    --proxy-contracts-admin 0xaddressOfProxyContractsAdmin \
+    --genesis ./genesis.json \
+    --json-rpc http://127.0.0.1:8545 \
     --test
   ```
 
-The above example will get the `stake-manager` and `stake-token` addresses directly from your `genesis.json` file. 
+The above example will get the `stake-manager` and `stake-token` addresses directly from the `genesis.json` file. 
 
 <details>
 <summary>Core contract deployment output example</summary>
