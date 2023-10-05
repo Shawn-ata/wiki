@@ -18,14 +18,6 @@ keywords:
 
 ACLs or Access Control Lists are a way of managing permissions in your Edge-powered chain. In this context, an ACL is essentially a list of addresses and their corresponding roles.
 
-### Roles can be one of three types:
-
-- `NoRole`: The address has no permissions.
-- `EnabledRole`: The address has some permissions.
-- `AdminRole`: The address has all permissions and can change the roles of other addresses.
-
-**For more information about how ACLs work in Edge, check out the overview guide [<ins>here</ins>](/docs/edge/design/runtime/allowlist.md).**
-
 :::info Keep in mind
 
 - **Enabling Lists**: Allowlists and blocklists are enabled or disabled exclusively during network initialization through the genesis command. Changes to the configuration cannot be made dynamically.
@@ -35,6 +27,80 @@ ACLs or Access Control Lists are a way of managing permissions in your Edge-powe
 - **Impact on Validators and System Transactions**: The impact of allowlists and blocklists on validators and system transactions can vary depending on network implementation.
 
 :::
+
+## ABI Specification
+
+### Overview
+
+Below is an overview of the ABI for the ACL in Edge:
+
+```shell
+function setAdmin(address)
+function setEnabled(address)
+function setNone(address)
+function readAddressList(address) returns (uint256)
+```
+
+### Functions
+
+**Roles can be one of three types:**
+
+- `NoRole`: The address has no permissions.
+- `EnabledRole`: The address has some permissions.
+- `AdminRole`: The address has all permissions and can change the roles of other addresses.
+
+**For more information about how ACLs work in Edge, check out the overview guide [<ins>here</ins>](/docs/edge/design/runtime/allowlist.md).**
+
+```go
+NoRole      Role = Role(types.StringToHash("..."))
+EnabledRole Role = Role(types.StringToHash("..."))
+AdminRole   Role = Role(types.StringToHash("..."))
+```
+
+- **Function Signatures**: The module provides functions to set or query roles:
+  - Set an address as an admin.
+  - Enable an address.
+  - Remove any role from an address.
+  - Read the role of an address.
+
+```go
+SetAdminFunc        = abi.MustNewMethod("function setAdmin(address)")
+SetEnabledFunc      = abi.MustNewMethod("function setEnabled(address)")
+SetNoneFunc         = abi.MustNewMethod("function setNone(address)")
+ReadAddressListFunc = abi.MustNewMethod("function readAddressList(address) returns (uint256)")
+```
+
+### Key Functionalities
+
+- **Creating an AddressList**: An instance of the AddressList is created with a reference to the state and the contract's address.
+
+```go
+func NewAddressList(state stateRef, addr types.Address) *AddressList {...}
+```
+
+- **Running the Contract**: The `Run` function decodes the input to determine the function being called and executes it.
+
+```go
+func (a *AddressList) Run(c *runtime.Contract, host runtime.Host, _ *chain.ForksInTime) *runtime.ExecutionResult {...}
+```
+
+- **Setting and Getting Roles**: The module provides functions to assign a role to an address and to fetch the role of a given address.
+
+```go
+func (a *AddressList) SetRole(addr types.Address, role Role) {...}
+func (a *AddressList) GetRole(addr types.Address) Role {...}
+```
+
+### How It Works
+
+1. A call to the `AddressList` triggers the `Run` function.
+2. The function decodes the input to identify the function being called.
+3. If querying a role, the role of the provided address is returned.
+4. For modifying roles, checks are in place to ensure:
+   - The caller has enough gas.
+   - The call isn't static (read-only).
+   - Only admins can modify roles.
+   - Admins can't remove their own admin role.
 
 ## Interacting with an ACL
 
@@ -47,21 +113,6 @@ To interact with the ACL precompiles using an external library or client, follow
 2. Create a contract instance for the ACL precompile using the ABI and the provider connected to the Edge-powered chain.
 
 3. Use the contract instance to call the functions defined in the precompile's ABI. These functions allow you to manage the ACL by adding or removing accounts, modifying roles, or performing other ACL-related operations.
-
-### ABI Specification
-
-Below is the ABI specification for the ACL:
-
-```shell
-function setAdmin(address)
-function setEnabled(address)
-function setNone(address)
-function readAddressList(address) returns (uint256)
-function setListEnabled(bool)
-function getListEnabled() returns (bool)
-```
-
-<!-- to document interaction -->
 
 ## Example Interaction with ethers.js
 
