@@ -67,7 +67,6 @@ values={[
 
 | Parameter | Description | Default Value | Mandatory | Example | Reconfigurable at Runtime |
 | :-------- | :---------- | :------------ | :-------- | :------ | :----------------------- |
-| `--base-fee-change-denom` | Represents the value to bound the amount the base fee can change between blocks. | 8 | NO | `genesis --base-fee-change-denom "8"` | NO |
 | `--block-tracker-poll-interval` | Interval (number of seconds) at which block tracker polls for latest block at rootchain. | 1s | NO | `genesis --block-tracker-poll-interval "1s"` | NO |
 | `--bridge-allow-list-admin` | List of addresses to use as admin accounts in the bridge allow list. | []string{} | NO | `genesis --bridge-allow-list-admin "0x2f82ad5785F6f3Fd242e7EC7a03c2cDfBA6cC6D1"` | NO |
 | `--bridge-allow-list-enabled` | List of addresses to enable by default in the bridge allow list. | []string{} | NO | `genesis --bridge-allow-list-enabled "0xbB39871E4e399b22428FdfA9E4e4Ca67842EA8Cd"` | NO |

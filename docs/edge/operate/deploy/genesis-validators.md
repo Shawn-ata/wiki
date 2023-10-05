@@ -68,7 +68,7 @@ Each validator needs to register themselves on the `CustomSupernetManager` contr
 
 ```bash
 ./polygon-edge polybft register-validator --data-dir ./test-chain-1 \
-  --supernet-manager $(cat genesis.json | jq -r '.params.engine.polybft.bridge.stakeManagerAddr')
+  --supernet-manager $(cat genesis.json | jq -r '.params.engine.polybft.bridge.customSupernetManagerAddr')
 ```
 
 ## 3. Initial staking on the rootchain
@@ -107,13 +107,13 @@ If you currently hold MATIC tokens, you can convert them to WMATIC through vario
 <details>
 <summary>Obtaining native root token address</summary>
 
-For example, if you are using the Mumbai test network, you can obtain the address of the MATIC testnet token by sending a GET request to the Mumbai network's JSON-RPC endpoint:
+For example, if you are using the Mumbai test network, you can obtain the address of the MATIC testnet token by sending a POST request to the Mumbai network's JSON-RPC endpoint:
 
 ```bash
 curl <mumbai-rpc-endpoint> \
   -X POST \
   -H "Content-Type: application/json" \
-  --data '{"jsonrpc":"2.0","method":"eth_contractAddress","params":["MaticToken"],"id":1}'
+  --data '{"jsonrpc":"2.0","method":"eth_call","params":[{"to":"<token-contract-address>","data":"0x06fdde03"},"latest"],"id":1}'
 ```
 
 </details>

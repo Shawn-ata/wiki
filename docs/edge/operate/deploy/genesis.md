@@ -30,7 +30,6 @@ To create the chain configuration, we use the `polygon-edge genesis` command, wh
 
 | Flag                                       | Description                                               | Example                                          |
 |--------------------------------------------|-----------------------------------------------------------|--------------------------------------------------|
-| `--base-fee-change-denom uint`             | Represents the value to bound the amount the base fee can change between blocks. | |
 | `--block-gas-limit uint`                   | The maximum amount of gas used by all transactions in a block (default 5242880) | `--block-gas-limit 10000000` |
 | `--block-time duration`                   | The predefined period which determines block creation frequency (default 2s) | `--block-time 5s` |
 | `--block-time-drift uint`                 | Configuration for block time drift value (in seconds) (default 10) | |
