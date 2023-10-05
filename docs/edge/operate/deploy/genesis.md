@@ -117,7 +117,7 @@ While the use of alternative ACL-enabled contracts, such as bridge ACLs, offers 
 | --- | --- | --- |
 | **Difference between `chain-id` and `supernet-id`** | - `chain-id`: Unique identifier for a childchain.<br/>- `supernet-id`: Identifier populated during registration with `StakeManager`. | Users can assign a custom `chain-id` via the genesis command. The `supernet-id` value is derived from the `rootchain deploy` command. |
 | **Create a Native Token and Premine** | Configure the native token and premine specific accounts. | - `--premine`: Specify premined accounts and balances.<br/>- `--native-token-config`: Configure the native token's details.<br/>- `--owner` (Note): For mintable native tokens, designates permissions. |
-| **Enable EIP1559** | Enable the London hard fork with specific configurations. | - `--burn-contract`: Specify the burn contract address.<br/>- `--genesis-base-fee`: Set the initial base fee for the genesis block. |
+| **Enable EIP1559** | Enable the London hard fork with specific configurations. | As of version 1.3.0, the `--genesis-base-fee` flag is not exposed. However, you can manually tweak `baseFee` and `baseFeeEM` in the `genesis.json` and restart the node for changes to take effect. |
 | **Contract Upgradability via Proxy Contracts** | Use proxy contracts for flexible and controlled upgrades. | - **Genesis Initialization**: Use `--proxy-contracts-admin` to specify upgrade permissions.<br/>- **Rootchain Deployment**: Uses `--proxy-contracts-admin` to define contract address while being able to upgrade logic.<br/>- **Stake Manager Deployment**: Uses `--proxy-contracts-admin` to define proxy admin for Staking Manager contract. |
 
 ## 3. Specify Validator Set & Generate Genesis
