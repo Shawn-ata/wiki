@@ -21,7 +21,7 @@ There is a proposal to transition the native token of the Polygon PoS network fr
 
 ### What is POL?
 
-POL is native token upgrade for the Polygon ecosystem, designed to support a wide range of activities and purposes, 
+POL is the native token upgrade for the Polygon ecosystem, designed to support a wide range of activities and purposes, 
 including being used as a tool for network participation and security. By staking POL, participants can actively contribute 
 to the ecosystem as validators. Importantly, POL has many of the same rights and features as MATIC, is built on OpenZeppelin's ERC20 
 implementations, and supports [<ins>EIP-2612</ins>](https://eips.ethereum.org/EIPS/eip-2612) for signature-based permit approvals.
@@ -93,7 +93,7 @@ Yes, the migration contract includes a feature known as "**unmigration**." This 
 
 ### How Does the Modified Plasma Bridge Function?
 
-The Plasma Bridge will undergo modifications, with community approval, to change the native of Polygon PoS to the new POL token. Specifically, the following changes are being proposed:
+The Plasma Bridge will undergo modifications, with community approval, to change the native token of Polygon PoS to the new POL token. Specifically, the following changes are being proposed:
 
 - **Bridging POL to Polygon PoS**: If you bridge POL tokens to Polygon PoS, you will receive an equal amount of native tokens (POL) on Polygon PoS.
 - **Bridging POL to Ethereum**: When bridging native tokens (POL), the bridge will always disburse POL tokens.
