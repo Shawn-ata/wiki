@@ -23,12 +23,12 @@ There is a proposal to transition the native token of the Polygon PoS network fr
 
 POL is native token upgrade for the Polygon ecosystem, designed to support a wide range of activities and purposes, 
 including being used as a tool for network participation and security. By staking POL, participants can actively contribute 
-to the ecosystem as validators. Importantly, POL has many of the and features as MATIC, is built on OpenZeppelin's ERC20 
-implementations, and supports EIP-2612 for signature-based permit approvals.
+to the ecosystem as validators. Importantly, POL has many of the same rights and features as MATIC, is built on OpenZeppelin's ERC20 
+implementations, and supports [<ins>EIP-2612</ins>](https://eips.ethereum.org/EIPS/eip-2612) for signature-based permit approvals.
 
 ### Do I Need to Do Anything Today as an Active Participant?
 
-**No**, as an active participant in the Polygon PoS network, you're not required to take any immediate actions. However, we encourage active participants to engage in the governance and decision-making processes of the POL token proposal. Your involvement and input can play a significant role in shaping the future of the Polygon ecosystem.
+**No**, as an active participant in the Polygon ecosystem, you're not required to take any immediate actions. However, we encourage active participants to engage in the governance and decision-making processes of the POL token proposal. Your involvement and input can play a significant role in shaping the future of the Polygon ecosystem.
 
 You can participate in governance proposals to vote on various aspects of the Polygon ecosystem through the PIP program. Check out how to do so [<ins>here</ins>](/docs/category/proposals/).
 
@@ -38,7 +38,7 @@ You can participate in governance proposals to vote on various aspects of the Po
 
 ### **Do** I Need to Do Anything **Today as an Application or Tooling Developer?**
 
-Please review the [<ins>PIPs</ins>](https://forum.polygon.technology/t/pip-18-polygon-2-0-phase-0-frontier/12913) and provide feedback on the proposed changes and analyze if any changes break your smart contracts. Developers for applications on the Polygon PoS should not see any breaking changes.
+Please review the [<ins>PIPs</ins>](https://forum.polygon.technology/t/pip-17-polygon-ecosystem-token-pol/12912) and provide feedback on the proposed changes and analyze if any changes break your smart contracts. Developers of dApps on Polygon PoS should not see any breaking changes.
 
 ### When Will POL Be Officially Upgraded?
 
