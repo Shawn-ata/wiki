@@ -59,7 +59,7 @@ Edge-powered chains are highly flexible and customizable blockchain platforms th
 
 ## What tools are available for Edge?
 
-Developers will have access to a variety of tools for building and launching blockchains using Edge. Polygon Labs has partnered with multiple infrastructure providers, tool providers, and implementation partners to offer an all-inclusive development experience.
+Developers will have access to a variety of tools for building and launching blockchains using Edge. Polygon Labs has partnered with multiple infrastructure providers, tool providers, and implementation providers to offer an all-inclusive development experience.
 
 Edge will eventually provide native tooling supplemented by third-party integrations and support. As the ecosystem grows, more resources are expected to become available, making it even easier for developers to build and deploy blockchain solutions.
 

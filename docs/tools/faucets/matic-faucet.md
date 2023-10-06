@@ -18,7 +18,7 @@ image: https://wiki.polygon.technology/img/polygon-logo.png
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-**Polygon Faucet** is a tool provided by **Polygon** and its ecosystem partners such as **Alchemy** and **Quicknode** that **allows you to obtain free MATIC tokens on the Mumbai Testnet** and get started with the Polygon network. **These test tokens enable you to work with Polygon features without having to spend actual MATIC tokens** on the Mainnet.
+**Polygon Faucet** is a tool provided by **Polygon** and its ecosystem providers such as **Alchemy** and **Quicknode** that **allows you to obtain free MATIC tokens on the Mumbai Testnet** and get started with the Polygon network. **These test tokens enable you to work with Polygon features without having to spend actual MATIC tokens** on the Mainnet.
 
 Additionally, you can also receive **Polygon zkEVM Testnet ETH** on Polygon Faucet.
 

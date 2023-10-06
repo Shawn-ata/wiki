@@ -13,7 +13,7 @@ keywords:
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-**Polygon Faucet** is the official tool provided by Polygon Labs to obtain Testnet tokens. It functions very similar to other such tools provided by ecosystem partners like Quicknode and Alchemy.
+**Polygon Faucet** is the official tool provided by Polygon Labs to obtain Testnet tokens. It functions very similar to other such tools provided by ecosystem providers like Quicknode and Alchemy.
 
 The zkEVM ETH faucet allows anyone to request bridged Goërli ETH tokens on the Polygon zkEVM network. Earlier, it was a bottleneck for developers to obtain Goërli ETH from a faucet and then bridge it over to Polygon zkEVM using the Wallet Suite.
 
